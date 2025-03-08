@@ -184,8 +184,6 @@ Geometry-Aware Feature-Guided Alignment">
 </head>
 <body>
 
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -194,6 +192,9 @@ Geometry-Aware Feature-Guided Alignment">
           <h1 class="title is-1 publication-title">GSA</h1>
           <h1 class="title is-2 publication-title">Cross-Instance Gaussian Splatting Registration via
             Geometry-Aware Feature-Guided Alignment</h1>
+            <p style="text-align: center; font-size: 1.2em; margin-top: 20px;">
+              This webpage contains 3D visualizations of the constructed augmented 3DGS models and results of the alignment method proposed in our paper.
+            </p>
             <style>
               .author-block {
                   margin-right: 10px;
@@ -217,12 +218,12 @@ Geometry-Aware Feature-Guided Alignment">
         <div id="slider1-container_teaser">
             <img-comparison-slider id="slider1">
                 <figure slot="first" class="before">
-                    <img height="100%" width="100%" src="./media/teaser/output_orig.gif">
-                    <figcaption>Radiance Field </figcaption>
+                    <img height="100%" width="100%" src="./media/teaser/output_orig_teaser.gif">
+                    <figcaption style="text-align: center;">Radiance Field of <br> Two GSA-Aligned <br>Airplanes </figcaption>
                 </figure>
                 <figure slot="second" class="after" id="gif-2">
-                    <img height="100%" width="100%" src="./media/teaser/output_features.gif">
-                    <figcaption>3D Geometric Semantic Features</figcaption>
+                    <img height="100%" width="100%" src="./media/teaser/output_features_teaser.gif">
+                    <figcaption style="text-align: center;">3D Geometric <br> Semantic Features</figcaption>
                 </figure>
             </img-comparison-slider>
         </div>
@@ -231,20 +232,20 @@ Geometry-Aware Feature-Guided Alignment">
         <div id="slider2-container_teaser" style="display: none;">
             <img-comparison-slider id="slider2">
                 <figure slot="first" class="before" id="gif-3">
-                    <img height="100%" width="100%" src="./media/teaser/output_orig.gif">
-                    <figcaption>Radiance Field </figcaption>
+                    <img height="100%" width="100%" src="./media/objects_features/output_orig_truck.gif">
+                    <figcaption style="text-align: center;" >Radiance Field of <br> Single Object </figcaption>
                 </figure>
                 <figure slot="second" class="after" id="gif-4">
-                    <img height="100%" width="100%" src="./media/teaser/output_features.gif">
-                    <figcaption>3D Geometric Semantic Features</figcaption>
+                    <img height="100%" width="100%" src="./media/objects_features/output_features_truck.gif">
+                    <figcaption  style="text-align: center;" >3D Geometric <br> Semantic Features</figcaption>
                 </figure>
             </img-comparison-slider>
         </div>
         <div class="button-container_teaser">
           <div class="glow-button">
-              <button id="toggle-slider" onclick="toggleSliders()">Switch Object</button>
+              <button id="toggle-slider">Switch Object</button>
           </div>
-      </div>
+        </div>
         <h2 class="subtitle has-text-centered">
           GSA is the first to tackle category-level registration in 3D Gaussian Splatting, leveraging geometry-aware features and a two-step optimization to enable cross-instance alignment.
             </h2>        
@@ -255,254 +256,65 @@ Geometry-Aware Feature-Guided Alignment">
 
 
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            We present Gaussian Splatting Alignment (GSA), a novel method for aligning two independently-built 3D Gaussian Splatting (3DGS) models using a similarity transformation, even when they correspond to different objects within the same category (e.g., two different cars). In contrast, existing methods can only align 3DGS models of the same object (e.g., the same car) and often require the true scale as input—whereas we estimate it successfully. Our approach leverages viewpoint-guided spherical features to establish robust correspondences and introduces a two-step optimization framework that aligns models while keeping their 3DGS representations fixed. First, we perform an iterative, feature-guided coarse registration, followed by a fine registration step enforcing multi-view feature consistency. While our first step already achieves state-of-the-art performance, the second step further improves results. We comprehensively evaluate our method against SOTA alternatives. In the standard same-object setting, our approach consistently outperforms prior methods, sometimes by a large margin, even when they are given the correct scale. In the more challenging case of different objects within the same category, our method vastly surpasses existing approaches, establishing the first effective framework for category-level GS3D registration and unlocking new applications. Our code will be released upon acceptance.
-          </p>
-          <!--/ Paper video. -->
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Approach</h2>
-    <div class="content has-text-justified">
-      <div class="columns is-centered">
-        <figure class="image is-centered">
-          <img src="./media/pipeline/Pipeline.png" alt="Pipeline Image">
+<div class="sync-novel-view-container">
+  <div class="column">
+    <h2 class="title is-6">Synthetic Scene</h2>
+    <div>
+      <img-comparison-slider>
+        <figure slot="first" class="before">
+          <img class="sync-gif" src="./media/sync_novel_view/output_orig_red.gif">
         </figure>
-      </div>
-      <p>
-        text
-        <br> <br>
-      </p>
+        <figure slot="second" class="after">
+          <img class="sync-gif" src="./media/sync_novel_view/output_features_red.gif">
+        </figure>
+      </img-comparison-slider>
     </div>
   </div>
-</section>
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h3 class="title is-3">3D Registration of the same object</h3>
-    <div class="content has-text-justified">
-    <p>
-    Near-perfect registration results for 2 different models of the same object <br> 
-    </p>
+  <div class="column">
+    <h2 class="title is-6">Synthetic Scene</h2>
+    <div>
+      <img-comparison-slider>
+        <figure slot="first" class="before">
+          <img class="sync-gif" src="./media/sync_novel_view/output_orig42.gif">
+        </figure>
+        <figure slot="second" class="after">
+          <img class="sync-gif" src="./media/sync_novel_view/output_features42.gif">
+        </figure>
+      </img-comparison-slider>
     </div>
-    <div class="columns is-centered">
-
-      <div class="column">
-        <h2 class="title is-6">Synthetic Scene</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-
-      <div class="column">
-        <h2 class="title is-6">Real Scene</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        <i>Experience sync issues with the GIFs? Simply refresh the webpage to synchronize playback.</i>
-      </p>
-    </div>
-
-    <style>
-      .before,
-      .after {
-        margin: 0;
-      }
-    
-      .before figcaption,
-      .after figcaption {
-        background: #fff;
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        color: #2e3452;
-        opacity: 0.8;
-        padding: 4px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 100%;
-      }
-    
-      .before figcaption {
-        left: 4px;
-      }
-    
-      .after figcaption {
-        right: 4px;
-      }
-    </style>
   </div>
-</section>
 
-
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h3 class="title is-3">3D Registration of different objects within the same category</h3>
-    <div class="content has-text-justified">
-    <p>
-      text
-    </p>
+  <div class="column">
+    <h2 class="title is-6">Synthetic Scene</h2>
+    <div>
+      <img-comparison-slider>
+        <figure slot="first" class="before">
+          <img class="sync-gif" src="./media/sync_novel_view/output_orig_police.gif">
+        </figure>
+        <figure slot="second" class="after">
+          <img class="sync-gif" src="./media/sync_novel_view/output_features_police.gif">
+        </figure>
+      </img-comparison-slider>
     </div>
-    <div class="columns is-centered">
-
-      <div class="column">
-        <h2 class="title is-6">Airplanes</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-
-      <div class="column">
-        <h2 class="title is-6">Chairs</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-      
-      <div class="column">
-        <h2 class="title is-6">SOMEthing</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-
-      <div class="column">
-        <h2 class="title is-6">something</h2>
-        <div>
-          <img-comparison-slider>
-            <figure slot="first" class="before">
-              <img width="100%" src="./media/teaser/output_features.gif">
-            </figure>
-            <figure slot="second" class="after">
-              <img width="100%" src="./media/teaser/output_features.gif">
-          </img-comparison-slider>
-        </div>
-      </div>
-      
-      <!--/ Matting. -->
-    </div>
-    <div class="content has-text-justified">
-      <p>
-        <i>Experience sync issues with the GIFs? Simply refresh the webpage to synchronize playback.</i>
-      </p>
-    </div>
-
-    <style>
-      .before,
-      .after {
-        margin: 0;
-      }
-    
-      .before figcaption,
-      .after figcaption {
-        background: #fff;
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        color: #2e3452;
-        opacity: 0.8;
-        padding: 4px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 100%;
-      }
-    
-      .before figcaption {
-        left: 4px;
-      }
-    
-      .after figcaption {
-        right: 4px;
-      }
-    </style>
   </div>
-</section>   
 
-
-    <style>
-      .before,
-      .after {
-        margin: 0;
-      }
-    
-      .before figcaption,
-      .after figcaption {
-        background: #fff;
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        color: #2e3452;
-        opacity: 0.8;
-        padding: 4px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 100%;
-      }
-    
-      .before figcaption {
-        left: 4px;
-      }
-    
-      .after figcaption {
-        right: 4px;
-      }
-    </style>
+  <div class="column">
+    <h2 class="title is-6">Real Scene</h2>
+    <div>
+      <img-comparison-slider>
+        <figure slot="first" class="before">
+          <img class="sync-gif" src="./media/sync_novel_view/output_origsynth1.gif">
+        </figure>
+        <figure slot="second" class="after">
+          <img class="sync-gif" src="./media/sync_novel_view/output_featuressynth1.gif">
+        </figure>
+      </img-comparison-slider>
+    </div>
   </div>
-</section>
+</div>
+
+
 
 <footer class="footer">
   <div class="container">

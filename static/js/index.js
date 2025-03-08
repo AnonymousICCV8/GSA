@@ -19,28 +19,51 @@ function setInterpolationImage(i) {
   $('#interpolation-image-wrapper').empty().append(image);
 }
 
+
+
+
 let currentSliderIndex = 0;
 const sliderContainers = [
     "slider1-container_teaser",
-    "slider2-container_teaser",
-    "slider3-container_teaser",
-    "slider4-container_teaser"
+    "slider2-container_teaser"
 ];
 
 function toggleSliders() {
     // Hide the current slider
     document.getElementById(sliderContainers[currentSliderIndex]).style.display = "none";
 
-    // Move to the next slider in a cyclic manner
+    // Move to the next slider (loop back after last)
     currentSliderIndex = (currentSliderIndex + 1) % sliderContainers.length;
 
-    // Show the next slider
+    // Show the new slider
     document.getElementById(sliderContainers[currentSliderIndex]).style.display = "block";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("toggle-slider").addEventListener("click", toggleSliders);
-});
+
+      // GIF Synchronization: Force all GIFs to start at the same time
+      const gifs = document.querySelectorAll(".sync-gif");
+  
+      function restartGifs() {
+          gifs.forEach(gif => {
+              let src = gif.src;
+              gif.src = ""; // Clear src
+              gif.offsetHeight; // Trigger reflow
+              gif.src = src; // Reload GIF
+          });
+      }
+  
+      // Restart GIFs on page load
+      setTimeout(restartGifs, 500); // Small delay to ensure loading
+  
+      // Optional: Restart GIFs every few seconds to keep them in sync
+      setInterval(restartGifs, 10000); // Adjust time as needed
+  });
+  
+
+
+
 
 
 $(document).ready(function() {
@@ -99,3 +122,4 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+

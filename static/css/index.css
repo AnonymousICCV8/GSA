@@ -155,3 +155,39 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.teaser {
+  transform: translateX(70px); /* Adjust as needed */
+}
+
+.glow-button {
+  transform: translateX(-70px); /* Adjust value as needed */
+}
+
+.subtitle {
+  transform: translateX(-70px); /* Adjust value as needed */
+}
+
+
+.centered-caption {
+  text-align: center;
+}
+
+.sync-novel-view-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents GIFs from stacking */
+  justify-content: center; /* Centers them */
+  gap: 15px; /* Adds spacing */
+  overflow-x: auto; /* Adds horizontal scrolling if needed */
+}
+
+.sync-novel-view-container .column {
+  flex: 1 1 25%; /* Forces 4 columns in one row */
+  max-width: 25%; /* Ensures all columns have equal size */
+  text-align: center; /* Centers titles */
+}
+
+.sync-novel-view-container img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+}
